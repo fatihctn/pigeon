@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -20,25 +21,25 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class CorePersistenceContext {
 
-    @Value("${datasource.core.driver-class-name}")
+    @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
 
-    @Value("${datasource.core.jdbc-url}")
+    @Value("${spring.datasource.url}")
     private String jdbcUrl;
 
-    @Value("${datasource.core.username}")
+    @Value("${spring.datasource.username}")
     private String username;
 
-    @Value("${datasource.core.password}")
+    @Value("${spring.datasource.password}")
     private String password;
 
-    @Value("${datasource.core.max-pool-size}")
+    @Value("${spring.datasource.maximum-pool-size}")
     private int maxPoolSize;
 
-    @Value("${datasource.core.name:CoreDBPool}")
+    @Value("${spring.datasource.name:CoreDBPool}")
     private String poolName;
 
-    @Value("${datasource.core.show-sql}")
+    @Value("${spring.jpa.show-sql}")
     private boolean showSql;
 
     @Bean(name = CoreDB.DATASOURCE)
@@ -66,5 +67,10 @@ public class CorePersistenceContext {
     @Bean(name = CoreDB.TRANSACTION_MANAGER)
     public PlatformTransactionManager transactionManager(@Qualifier(CoreDB.ENTITY_MANAGER) EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
+    }
+
+    @Bean(name = CoreDB.JDBC_TEMPLATE)
+    public NamedParameterJdbcTemplate namedParameterJdbcTemplate(@Qualifier(CoreDB.DATASOURCE) DataSource dataSource) {
+        return new NamedParameterJdbcTemplate(dataSource);
     }
 }
