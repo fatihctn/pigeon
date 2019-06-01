@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>pigeon</artifactId>
+        <groupId>com.fatihctn.pigeon</groupId>
+        <version>${project-version}</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <name>Pigeon Account</name>
+    <description>Account manage all modules</description>
+    <artifactId>account</artifactId>
+    <version>${project-version}</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.fatihctn.pigeon</groupId>
+            <artifactId>core</artifactId>
+            <version>${project-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fatihctn.pigeon</groupId>
+            <artifactId>common-data</artifactId>
+            <version>${project-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fatihctn.pigeon</groupId>
+            <artifactId>common-redis</artifactId>
+            <version>${project-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fatihctn.pigeon</groupId>
+            <artifactId>common-cassandra</artifactId>
+            <version>${project-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fatihctn.pigeon</groupId>
+            <artifactId>event-service</artifactId>
+            <version>${project-version}</version>
+        </dependency>
+    </dependencies>
+</project>

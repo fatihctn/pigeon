@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fatihctn.pigeon</groupId>
+    <artifactId>pigeon</artifactId>
+    <packaging>pom</packaging>
+    <name>Pigeon</name>
+    <description>Comfortable ecommerce project</description>
+    <version>${project-version}</version>
+
+    <modules>
+        <module>common</module>
+        <module>core</module>
+        <module>workers</module>
+        <module>checkout</module>
+        <module>catalog</module>
+        <module>account</module>
+        <module>shipping</module>
+        <module>payment</module>
+        <module>order</module>
+        <module>invoice</module>
+        <module>campaign</module>
+        <module>event-service</module>
+        <module>profiling</module>
+        <module>cms</module>
+        <module>web</module>
+    </modules>
+
+    <properties>
+        <project-version>0.1</project-version>
+        <project-client-version>0.1</project-client-version>
+        <project-widget-version>0.1</project-widget-version>
+        <project-profiling-version>0.1</project-profiling-version>
+        <spring-boot-version>1.5.17.RELEASE</spring-boot-version>
+        <spring-devtools-version>1.5.17.RELEASE</spring-devtools-version>
+        <guava-version>27.0-jre</guava-version>
+        <redis-version>3.9.0</redis-version>
+        <cassandra-version>3.6.0</cassandra-version>
+        <clickhouse-version>0.1.42 </clickhouse-version>
+        <java.version>1.8</java.version>
+        <thmyleaf-version>3.0.9.RELEASE</thmyleaf-version>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <bootstrap-version>4.3.1</bootstrap-version>
+        <maven-plugin-version>2.22.0</maven-plugin-version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <lombok-version>1.18.4</lombok-version>
+        <hikari-config>2.4.4</hikari-config>
+    </properties>
+
+</project>
