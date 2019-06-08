@@ -33,6 +33,6 @@ public class Configuration {
     @Column(name = "boolValue")
     private Boolean boolValue;
 
-    @Column(name = "decimalValue", precision = 4, scale = 10)
+    @Column(name = "decimalValue", precision = 10, scale = 4)
     private BigDecimal decimalValue;
 }
