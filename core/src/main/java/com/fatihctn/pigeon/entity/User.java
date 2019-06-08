@@ -69,7 +69,7 @@ public class User {
     @Embedded
     private CreateUpdateDeleteTimestamp timestamps;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "users")
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "roleId"),

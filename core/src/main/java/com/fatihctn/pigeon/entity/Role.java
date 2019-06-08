@@ -41,7 +41,7 @@ public class Role {
     @Embedded
     private CreateUpdateTimestamp createUpdateTimestamp;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "role_permission",
         joinColumns = @JoinColumn(name = "roleId"),
         inverseJoinColumns = @JoinColumn(name = "permissionId"),
@@ -49,7 +49,7 @@ public class Role {
     )
     private Set<Permission> permissions;
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "roles")
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "roleId"),
             inverseJoinColumns = @JoinColumn(name = "userId"),
