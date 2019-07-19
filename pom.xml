@@ -15,7 +15,6 @@
         <module>common</module>
         <module>core</module>
         <module>workers</module>
-        <module>checkout</module>
         <module>catalog</module>
         <module>account</module>
         <module>shipping</module>
@@ -23,7 +22,6 @@
         <module>order</module>
         <module>invoice</module>
         <module>campaign</module>
-        <module>event-service</module>
         <module>profiling</module>
         <module>cms</module>
         <module>web</module>
